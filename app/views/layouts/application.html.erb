@@ -15,6 +15,12 @@
 					<%= link_to 'VideoPage', root_path, class: 'brand' %>
 					<ul class="nav pull-right">
 						<% if user_signed_in? %>
+						<li>
+							<%= link_to 'Twoje materiały video', videos_index_path %>
+						</li>
+						<li>
+							<%= link_to 'Wrzuć nowy materiał', videos_new_path %>
+						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b> </a>
 							<ul class="dropdown-menu">

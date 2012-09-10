@@ -1,5 +1,9 @@
 Videopage::Application.routes.draw do
   
+  get "videos/index"
+
+  get "videos/new"
+
   devise_for :users
 
   root :to => 'pages#index'
