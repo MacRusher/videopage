@@ -38,4 +38,7 @@ Videopage::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  ENV['PANDASTREAM_URL'] = "https://6c4cfad3028a4deacf16:3503fd390d22d1a44a04@api.pandastream.com/ea3a07b4176dc1a7a3e8ec839d4b944b"
+  
 end
