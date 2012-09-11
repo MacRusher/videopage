@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   def index
-    @videos = Video.find_all_by_user_id(current_user.id)
+    #@videos = Video.find_all_by_user_id(current_user.id)
+    @videos = current_user.videos.all
   end
 
   def show
@@ -21,7 +22,9 @@ class VideosController < ApplicationController
   end
 
   def destroy
-    Video.find(params[:id]).destroy
+    video = Video.find(params[:id])
+    video.panda_video.delete
+    video.destroy
     flash[:success] = "Film zostal usuniety"
     redirect_to videos_path
   end
