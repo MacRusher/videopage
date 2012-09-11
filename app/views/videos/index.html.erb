@@ -1,2 +1,29 @@
-<h1>Videos#index</h1>
-<p>Find me in app/views/videos/index.html.erb</p>
+<div class="page-header">
+  <h1>Lista Twoich filmów
+  <%= link_to 'Wrzuć nowy materiał', new_video_path, class: 'btn btn-primary btn-large' %>
+  </h1>
+</div>
+<div class="row-fluid">
+	<ul class="thumbnails">
+		<% @videos.each do |v| %>
+		<li class="span4">
+			<div class="thumbnail">
+				<img src="<%= v.panda_video.encodings["h264.hi"].screenshots.first %>" width="300" alt="">
+				<div class="caption">
+					<h3><%= v.title %></h3>
+					<% if v.panda_video.status == 'success' %>
+					<p>Status: gotowy</p>
+					<% else %>
+					<p>Status: konwertowanie</p>
+					<% end %>
+					<p>
+						<%= link_to 'Oglądaj', v, class: 'btn btn-success' %>
+						<%= link_to "Usuń film", v, class: 'btn btn-danger',
+						method: :delete, data: { confirm: "Czy na pewno chcesz usunąć ten film?" } %>
+					</p>
+				</div>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+</div>
