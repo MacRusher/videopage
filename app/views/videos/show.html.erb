@@ -8,3 +8,9 @@
   <source src="<%= @webm_encoding.url %>" type='video/webm' />
 </video>
 </div>
+
+<h3 style="margin-top: 50px;">Osadź na zewnętrznej stronie internetowej</h3>
+<textarea style="width: 600px; height: 50px;"><iframe src="<%= url_for(:controller => 'videos', :action => 'embed', :id => @video.id, :only_path => false) %>" style="width: 640px; height: 360px;" frameborder="0" allowFullScreen="true"></iframe></textarea>
+
+<div style="clear: both;"></div>
+

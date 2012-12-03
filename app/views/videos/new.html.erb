@@ -18,6 +18,8 @@
   <%= f.submit "Dodaj video" %>
 <% end %>
 
+<p>Maksymalny rozmiar pliku to 10MB!</p>
+
 <script>
   <% auth_params = Panda.signed_params('post', "/videos.json") %>
   jQuery("#returned_video_id").pandaUploader(<%=raw auth_params.to_json %>, {

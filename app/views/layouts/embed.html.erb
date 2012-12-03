@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VideoPage</title>
+		<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+		<script src="http://vjs.zencdn.net/c/video.js"></script>
+		<%= csrf_meta_tags %> <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;	
+			}
+			body{
+				width: 640px;
+				height: 360px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+</html>

@@ -7,6 +7,8 @@ Videopage::Application.routes.draw do
   resources :videos
   resources :pages
   
+  match "/embed/:id" => "videos#embed"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
